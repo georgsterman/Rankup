@@ -15,7 +15,7 @@ public class Ranking {
 		
 		if ( Rankup.econ == null ){
 			
-			Language.send( player, "&cNo valid economy plugin found. Tell an administrator.");
+			Language.send( player, "&4&lECONOMY PLUGIN MISSING. CONTACT THE OWNER");
 			return false; 
 			
 		}
@@ -34,13 +34,13 @@ public class Ranking {
 		
 		if( Rankup.perms.getGroups().length == 0 || !Rankup.perms.hasSuperPermsCompat() ){
 			
-			Language.send( player, "&cNo valid permissions plugin found. Tell an administrator.");
+			Language.send( player, "&8[&6&oALT&bRankup&8] &cYou do not have permission to use this command.");
 			return false; 
 			
 		}
 		
 		if( !player.hasPermission("rankup.rankup")){
-			Language.send( player, "&cYou do not have permission to rankup.");
+			Language.send( player, "&8[&6&oALT&bRankup&8] &4Please tell an owner that you are missing rankup.rankup");
 		}
 		
 		if( Config.getRankToGroup( player ) != null ){
@@ -74,7 +74,7 @@ public class Ranking {
 				}
 			
 				Rankup.perms.playerAddGroup(player, newRank);
-				Language.broadcast( "&b" + player.getDisplayName() + "&3 has ranked up to &b" + newRank + "." );
+				Language.broadcast( "&b" + player.getDisplayName() + "&8&l[&6&l&oALT&b&lRankup&8&l] &a&l" + newRank + "." );
 				
 				return true;
 				
