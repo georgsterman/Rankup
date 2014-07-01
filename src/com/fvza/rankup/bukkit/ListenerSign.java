@@ -28,12 +28,12 @@ public class ListenerSign implements Listener {
 		if( block.getType() == Material.SIGN_POST || block.getType() == Material.WALL_SIGN ){
 			Sign s = (Sign)block.getState();
 			
-			if(s.getLine(0).equalsIgnoreCase("§1[Rankup]")){
+			if(s.getLine(0).equalsIgnoreCase("ï¿½1[Rankup]")){
 				if( !player.hasPermission( "rankup.sign" ) ){
-					Language.send( player, "&cYou do not have permission to break this sign." );
+					Language.send( player, "&8[&6&oALT&bSigns&8] &cNice try. You can't remove this sign." );
 					event.setCancelled( true );
 				} else {
-					Language.send( player, "&7You have successfully removed this rankup sign." );
+					Language.send( player, "&8[&6&oALT&bSigns&8] &aYou have created a rankup sign. Players can click this to use /rankup automatically." );
 				}
 			}
 			
@@ -60,7 +60,7 @@ public void onSignChange(SignChangeEvent e) {
       }
 
     } else {
-      Language.send(p, "&cYou do not have permission to create a rankup sign.");
+      Language.send(p, "&8[&6&oALT&bSigns&8] &cNice try. You can't create this song.");
       e.setCancelled(true);
     }
 }
@@ -77,7 +77,7 @@ public void onSignChange(SignChangeEvent e) {
 				Sign s = (Sign)b.getState();
 				Player p = event.getPlayer();
 					
-				if (s.getLine(0).equalsIgnoreCase("§1[Rankup]"))
+				if (s.getLine(0).equalsIgnoreCase("ï¿½1[Rankup]"))
 						Ranking.rankup( p );
 				}
 		}
