@@ -32,7 +32,7 @@ public class Commands implements CommandExecutor {
 					Ranking.rankup( player );
 					return true; 
 				} else {
-					Language.send( player, "&cYou do not have permission to rankup.");
+					Language.send( player, "&8[&6&oALT&bRankup&8] &cPlease tell an owner your missing rankup.rankup");
 				}
 				
 			} else if ( args.length == 1 ){
@@ -42,16 +42,16 @@ public class Commands implements CommandExecutor {
 					if( player.hasPermission("rankup.reload" )){
 						Language.send( player , " &3&oRankup (" + Bukkit.getServer().getPluginManager().getPlugin("Rankup").getDescription().getVersion() + ")&7&o by FVZA is running.");
 					} else {
-						Language.send( player ,"&cYou do not have permission for this command.");
+						Language.send( player ,"&8[&6&oALT&bRankup&8] &4You cant use this command.");
 					}
 					
 				} else if ( args[0].equalsIgnoreCase("r") || args[0].equalsIgnoreCase("reload") ){
 					
 					if( player.hasPermission("rankup.reload" )){
 						FileManager.loadFiles();
-						Language.send( player ,"&7Rankup has been reloaded.");
+						Language.send( player ,"&8[&6&oALT&bRankup&8] &aAny new ranks you have added or rank prices you have changed have been");
 					} else {
-						Language.send( player ,"&cYou do not have permission for this command.");
+						Language.send( player ,"&8[&6&oALT&bRankup&8] &4You cant use this command.");
 					}
 				}
 			}
